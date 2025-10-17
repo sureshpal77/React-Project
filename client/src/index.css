@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+.app-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.mobile-view {
+  width: 375px; /* typical mobile width */
+  height: 100vh; /* adjust based on design */
+  border-radius: 20px;
+  overflow: hidden;
+  background-color: white;
+}
