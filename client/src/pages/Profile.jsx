@@ -3,9 +3,6 @@ import profileImg from '../assets/profileImg.png';
 import {AuthContext} from '../../context/AuthContext.jsx'
 const Profile = () => {
   const [userImage, setUserImage] = useState(null);
-  const [userName, setUserName] = useState("");
-  const [email, setEmail] = useState("");
-
   const {authUser} = useContext(AuthContext);
 
 
