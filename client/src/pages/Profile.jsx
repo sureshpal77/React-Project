@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import profileImg from '../assets/profileImg.png';
-
+import {AuthContext} from '../../context/AuthContext.jsx'
 const Profile = () => {
   const [userImage, setUserImage] = useState(null);
-  const [userName, setUserName] = useState("non");
-  const [email, setEmail] = useState("mail123@gmail.com");
+  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
+
+  const {authUser} = useContext(AuthContext);
+
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -62,8 +65,8 @@ const Profile = () => {
 
         {/* User Info */}
         <div className="flex flex-col justify-start ml-5">
-          <h2 className="text-lg font-semibold text-gray-800 leading-tight">{userName}</h2>
-          <h3 className="text-sm text-gray-700 leading-tight">{email}</h3>
+          <h2 className="text-lg font-semibold text-gray-800 leading-tight">{authUser.fullName}</h2>
+          <h3 className="text-sm text-gray-700 leading-tight">{authUser.email}</h3>
         </div>
         
       </div>
